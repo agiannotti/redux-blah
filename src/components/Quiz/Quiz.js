@@ -1,8 +1,12 @@
+import { useSelector } from 'react-redux';
+
 const Quiz = () => {
-  return this.props.quizzes.map((quiz, id) => (
+  const { questions } = useSelector((state) => state.questions);
+  // const dispatch = useDispatch();
+  return questions.map((question, id) => (
     <li key={id}>
-      {quiz.id}
-      {quiz.title}
+      {question.id}
+      {question.title}
     </li>
   ));
 };
